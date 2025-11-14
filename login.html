@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mario Jump</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(#00bfff, #e0f6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #cc0000;
+        }
+        
+        .toggle-form {
+            margin-top: 20px;
+            color: #555;
+        }
+        
+        .toggle-form a {
+            color: #ff3333;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .error-message {
+            color: #ff3333;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Mario Jump</h1>
+        
+        <div id="login-form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="login-username">Nome de Usuário</label>
+                <input type="text" id="login-username" placeholder="Digite seu usuário">
+            </div>
+            <div class="form-group">
+                <label for="login-password">Senha</label>
+                <input type="password" id="login-password" placeholder="Digite sua senha">
+            </div>
+            <button id="login-button">Entrar</button>
+            <div class="error-message" id="login-error"></div>
+            <div class="toggle-form">
+                Não tem uma conta? <a id="show-register">Registre-se</a>
+            </div>
+        </div>
+        
+        <div id="register-form" style="display: none;">
+            <h2>Registrar</h2>
+            <div class="form-group">
+                <label for="register-username">Nome de Usuário</label>
+                <input type="text" id="register-username" placeholder="Escolha um usuário">
+            </div>
+            <div class="form-group">
+                <label for="register-password">Senha</label>
+                <input type="password" id="register-password" placeholder="Crie uma senha">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirmar Senha</label>
+                <input type="password" id="confirm-password" placeholder="Repita a senha">
+            </div>
+            <button id="register-button">Registrar</button>
+            <div class="error-message" id="register-error"></div>
+            <div class="toggle-form">
+                Já tem uma conta? <a id="show-login">Faça login</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        if (!localStorage.getItem('users')) {
+            localStorage.setItem('users', JSON.stringify([]));
+        }
+        
+        
+        if (!localStorage.getItem('rankings')) {
+            localStorage.setItem('rankings', JSON.stringify([]));
+        }
+        
+        
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const showRegister = document.getElementById('show-register');
+        const showLogin = document.getElementById('show-login');
+        const loginButton = document.getElementById('login-button');
+        const registerButton = document.getElementById('register-button');
+        const loginError = document.getElementById('login-error');
+        const registerError = document.getElementById('register-error');
+        
+       
+        showRegister.addEventListener('click', () => {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+            loginError.textContent = '';
+        });
+        
+        showLogin.addEventListener('click', () => {
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'block';
+            registerError.textContent = '';
+        });
+        
+        
+        loginButton.addEventListener('click', () => {
+            const username = document.getElementById('login-username').value.trim();
+            const password = document.getElementById('login-password').value.trim();
+            
+            if (!username || !password) {
+                loginError.textContent = 'Por favor, preencha todos os campos.';
+                return;
+            }
+            
+            const users = JSON.parse(localStorage.getItem('users'));
+            const user = users.find(u => u.username === username && u.password === password);
+            
+            if (user) {
+                
+                sessionStorage.setItem('currentUser', JSON.stringify(user));
+                
+                window.location.href = 'index.html';
+            } else {
+                loginError.textContent = 'Usuário ou senha incorretos.';
+            }
+        });
+        
+        
+        registerButton.addEventListener('click', () => {
+            const username = document.getElementById('register-username').value.trim();
+            const password = document.getElementById('register-password').value.trim();
+            const confirmPassword = document.getElementById('confirm-password').value.trim();
+            
+            if (!username || !password || !confirmPassword) {
+                registerError.textContent = 'Por favor, preencha todos os campos.';
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                registerError.textContent = 'As senhas não coincidem.';
+                return;
+            }
+            
+            if (password.length < 4) {
+                registerError.textContent = 'A senha deve ter pelo menos 4 caracteres.';
+                return;
+            }
+            
+            const users = JSON.parse(localStorage.getItem('users'));
+            
+            if (users.some(u => u.username === username)) {
+                registerError.textContent = 'Nome de usuário já em uso.';
+                return;
+            }
+            
+            
+            const newUser = { username, password };
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            
+            sessionStorage.setItem('currentUser', JSON.stringify(newUser));
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

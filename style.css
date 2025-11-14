@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game-board {
+  width: 100%;
+  height: 500px;
+  border-bottom: 15px solid #00ff48;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#00bfff, #e0f6ff);
+}
+
+.pipe {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+}
+
+.clouds {
+  width: 550px;
+  position: absolute;
+  animation: cloud-animation 20s infinite linear;
+}
+
+.jump {
+  animation: jump 500ms ease-out;
+}
+
+.restart-button {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+}
+
+.reset-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: #cc0000;
+}
+
+.score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: #333;
+  z-index: 10;
+}
+
+.points-popup {
+  position: absolute;
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 42px;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
+  animation: float-up 1.5s ease-out forwards;
+  z-index: 100;
+  display: none;
+  pointer-events: none;
+  font-family: "Arial Black", sans-serif;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+
+.ranking-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.ranking-container h2 {
+  color: #ff3333;
+  margin-bottom: 20px;
+}
+
+.ranking-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.ranking-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.ranking-item:nth-child(1) {
+  font-weight: bold;
+  color: #ffd700;
+  font-size: 1.2em;
+}
+
+.ranking-item:nth-child(2) {
+  font-weight: bold;
+  color: #c0c0c0;
+}
+
+.ranking-item:nth-child(3) {
+  font-weight: bold;
+  color: #cd7f32;
+}
+
+.back-to-game {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-to-game:hover {
+  background-color: #cc0000;
+}
+
+.user-info {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#logout-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#logout-button:hover {
+  background-color: #cc0000;
+}
+
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 200px;
+  }
+  60% {
+    bottom: 200px;
+  }
+  75% {
+    bottom: 150px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -80px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes cloud-animation {
+  from {
+    right: -550px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -60px) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -120px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes float-up-big {
+  0% {
+    transform: translate(-50%, 0) scale(1);
+    text-shadow: 0 0 10px #ff0000;
+  }
+  50% {
+    transform: translate(-50%, -80px) scale(1.5);
+    text-shadow: 0 0 20px #ff0000;
+  }
+  100% {
+    transform: translate(-50%, -150px) scale(1);
+    opacity: 0;
+    text-shadow: 0 0 30px #ff0000;
+  }
+}

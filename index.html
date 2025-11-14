@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="Fotos/transferir.jpg" type="image/jpg" />
+
+    <title>Mario Jump</title>
+  </head>
+  <body>
+    <div class="user-info">
+      <span id="username-display"></span>
+      <button id="logout-button">Sair</button>
+    </div>
+    
+    <div class="game-board">
+      <img src="Fotos/clouds.png" class="clouds" />
+      <img src="Fotos/mario.gif" class="mario" />
+      <img src="Fotos/pipe.png" class="pipe" />
+    </div>
+
+    <div class="restart-button">
+      <button class="reset-btn">Tente Novamente 🔁</button>
+    </div>
+
+    <div class="score">
+      <h1 class="score-text">Pontos: <span class="points">0</span></h1>
+    </div>
+    
+    <div class="ranking-container" style="display: none;">
+      <h2>Ranking</h2>
+      <div class="ranking-list"></div>
+      <button class="back-to-game">Jogar Novamente</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
