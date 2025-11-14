@@ -10,7 +10,6 @@ Este é um pequeno jogo inspirado no estilo clássico do Mario, desenvolvido par
 - Inimigos básicos
 - Pontuação
 - Sistema de Game Over
-- Sons e animações (se implementado)
 
 ---
 
@@ -26,3 +25,4 @@ Este é um pequeno jogo inspirado no estilo clássico do Mario, desenvolvido par
 ### 1. Clone o repositório
 ```bash
 git clone https://github.com/Pedrox24/Project-MarioGame.git
+
