@@ -1,1 +1,28 @@
-# 👨🏻‍💻 Pedro Henrique **`Estudante de Informática | Futuro Desenvolvedor`** Olá! Me chamo **Pedro Henrique**, sou estudante de Informática no **IFPB – Campus Itaporanga** e estou construindo meu caminho no mundo da programação. Aqui no GitHub, registro todos os meus **projetos, exercícios, estudos e testes**, desde os primeiros códigos até aplicações mais completas. Sempre buscando aprender mais, praticar e evoluir como desenvolvedor. --- ### 🌐 Redes & Contato <p align="left"> <a href="https://github.com/pedro" target="_blank"> <img alt="GitHub Followers" title="Me siga no GitHub" src="https://custom-icon-badges.demolab.com/github/followers/Pedro?color=236ad3&labelColor=1155ba&style=for-the-badge&logo=github&label=Seguidores&logoColor=white" /> </a> <a href="https://github.com/pedro?tab=repositories&sort=stargazers"> <img alt="Total de estrelas" title="Estrelas nos repositórios" src="https://custom-icon-badges.demolab.com/github/stars/pedro?color=55960c&style=for-the-badge&labelColor=488207&logo=star&label=estrelas" /> </a> </p> --- ### 🤖 Linguagens e Tecnologias que estudo <img align="left" alt="HTML" title="HTML" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" /> <img align="left" alt="CSS" title="CSS" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" /> <img align="left" alt="JavaScript" title="JavaScript" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /> <img align="left" alt="Python" title="Python" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" /> <img align="left" alt="Java" title="Java" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" /> <img align="left" alt="Git" title="Git" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" /> <img align="left" alt="MySQL" title="MySQL" width="30px" style="padding-right: 10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" /> <br/><br/> --- ### 📁 Sobre este Repositório Este repositório reúne: - 🧪 **Projetos de estudo** - 💻 **Exercícios de HTML, CSS, JS e Python** - ☕ **Práticas de Java e Programação Orientada a Objetos** - 🗄️ **Consultas e scripts SQL** - 🎮 **Testes, jogos e experimentos pessoais** - 🎒 **Trabalhos escolares e projetos do IFPB** É um espaço para acompanhar minha **evolução como desenvolvedor**. --- ### 📊 Estatísticas <p> <img align="left" alt="GitHub Stats" height="200" style="padding-right: 10px;" src="https://github-readme-stats.vercel.app/api?username=Pedro&show_icons=true&theme=tokyonight&include_all_commits=true&locale=pt-br" /> <img align="left" alt="GitHub Stats" height="200" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pedro&theme=tokyonight&layout=compact&custom_title=Tecnologias&langs_count=9" /> </p> --- ### 🔥 Objetivo Meu foco é evoluir um pouco todos os dias, criando projetos reais, aprendendo novas tecnologias e me preparando para seguir carreira em **Desenvolvimento de Sistemas**. --- ### 🤝 Contribuições Sugestões e feedback são sempre bem-vindos! Fique à vontade para explorar e acompanhar minha evolução 🚀
+# 🎮 Jogo do Mario
+
+Este é um pequeno jogo inspirado no estilo clássico do Mario, desenvolvido para fins de estudo de programação, lógica de jogos e criação de mecânicas simples.
+
+---
+
+## 📌 Funcionalidades
+- Controle do personagem (andar, pular, etc.)
+- Detecção de colisões
+- Inimigos básicos
+- Pontuação
+- Sistema de Game Over
+- Sons e animações (se implementado)
+
+---
+
+## 🛠️ Tecnologias utilizadas
+- Linguagem: **(coloque aqui: Python / Java / C# / etc.)**
+- Biblioteca / Engine: **(Pygame / Unity / Godot / etc.)**
+- IDE/editor: **(VS Code / PyCharm / etc.)**
+
+---
+
+## 🚀 Como executar o projeto
+
+### 1. Clone o repositório
+```bash
+git clone https://github.com/Pedrox24/Project-MarioGame.git
